@@ -1,0 +1,82 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 226 23% 6%;   /* #0B0E14 Rich Black */
+    --foreground: 0 0% 95%;     /* #F2F2F2 Soft White */
+
+    --card: 223 16% 13%;        /* #1A1D26 Gunmetal Gray */
+    --card-foreground: 0 0% 95%; /* #F2F2F2 Soft White */
+
+    --popover: 223 16% 13%;     /* #1A1D26 Gunmetal Gray */
+    --popover-foreground: 0 0% 95%; /* #F2F2F2 Soft White */
+
+    --primary: 259 100% 63%;    /* #6C40FF Royal Violet */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF White */
+
+    --secondary: 223 16% 13%;   /* #1A1D26 Gunmetal Gray */
+    --secondary-foreground: 0 0% 95%; /* #F2F2F2 Soft White */
+
+    --muted: 223 10% 18%;       /* Slightly lighter than Gunmetal */
+    --muted-foreground: 220 10% 66%; /* #A2A9B0 Steel Gray */
+
+    --accent: 223 10% 18%;      /* Slightly lighter than Gunmetal */
+    --accent-foreground: 0 0% 95%; /* #F2F2F2 Soft White */
+
+    --destructive: 347 100% 65%; /* #FF4D6D Blood Red */
+    --destructive-foreground: 0 0% 95%; /* #F2F2F2 Soft White */
+
+    --border: 223 12% 25%;      /* Darker border color */
+    --input: 223 12% 25%;       /* Darker input color */
+    --ring: 259 100% 63%;       /* #6C40FF Royal Violet */
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-brand-black text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glow-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-brand-purple to-brand-cyan rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(108,64,255,0.5)] hover:scale-105 active:scale-95;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .glass-card {
+    @apply bg-brand-dark/50 backdrop-blur-sm border border-white/10 rounded-xl;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(108, 64, 255, 0.5);
+  }
+  
+  .purple-gradient-text {
+    @apply bg-gradient-to-r from-brand-purple to-brand-cyan text-transparent bg-clip-text;
+  }
+
+  .cyan-glow {
+    filter: drop-shadow(0 0 6px rgba(0, 246, 255, 0.6));
+  }
+  
+  .purple-glow {
+    filter: drop-shadow(0 0 6px rgba(108, 64, 255, 0.6));
+  }
+}
